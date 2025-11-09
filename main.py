@@ -13,7 +13,7 @@ import requests
 
 # Constants
 
-DB_PATH = '/home/blankzzanimalcompany/mysite/userdata.db'
+DB_PATH = '/userdata.db'
 WEBHOOK_URL = 'https://discord.com/api/webhooks/1386463011362836582/WAG8sMCuf9QihXkHFHAVsGgdsXO00mZI2TwIQqTzcBXN1P4QWnzlS16Y85gpsPMAJk3H'
 ENABLE_RANDOM_TOKENS = True
 trusted_public_ips = {'71.241.196.83', '72.44.48.182'}  # Add actual trusted IPs
@@ -87,7 +87,7 @@ def generate_username():
 
 def generate_gameplay_loadout():
     try:
-        with open('/home/blankzzanimalcompany/mysite/econ_gameplay_items.json', 'r') as f:
+        with open('/econ_gameplay_items.json', 'r') as f:
             data = json.load(f)
         item_ids = [item['id'] for item in data if 'id' in item]
     except Exception as e:
@@ -285,7 +285,7 @@ def serve_game_data():
     print(f"Request from IP: {client_ip}")
 
     file_name = 'game-data-prod.zip'
-    file_path = os.path.join('/home/blankzzanimalcompany/mysite', file_name)
+    file_path = os.path.join('/', file_name)
 
     if not os.path.exists(file_path):
         print(f"File not found: {file_path}")
