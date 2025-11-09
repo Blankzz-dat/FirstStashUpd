@@ -1,5 +1,5 @@
-fastapi
-uvicorn[standard]
-requests
-websockets
-python-dotenv
+Flask==2.3.3              # Your web framework
+flask-sockets==0.2.1      # WebSocket support for lobbies
+gevent==23.9.1            # Async networking (required for WebSockets)
+gevent-websocket==0.10.1  # WebSocket handler
+requests==2.31.0          # For Discord webhook logging
